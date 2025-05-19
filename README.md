@@ -2,6 +2,29 @@
 
 This repository provides a ready-to-use skeleton for setting up local AEM environments. It includes scripts to configure and run AEM Author and Publish instances in a clean and isolated directory structure.
 
+## 🛠️ Cloning the Repo by OS and Minimal Download
+
+This repository supports Linux/macOS and Windows scripts in separate branches to avoid downloading unnecessary files.
+
+- **Linux/macOS users:** Clone the `main` branch which contains shell scripts and README with right instructions.
+- **Windows users:** Clone the `windows` branch which contains batch scripts (experimental) and README with how to use.
+
+To minimize download size, perform a shallow clone with only the latest commit:
+
+### Linux/macOS
+
+```bash
+git clone --branch main --depth 1 https://github.com/lu-ch0/aem-skeleton.git your-instance-folder
+cd your-instance-folder
+```
+
+### Windows (Git Bash)
+
+```bash
+git clone --branch windows --depth 1 https://github.com/lu-ch0/aem-skeleton.git your-instance-folder
+cd your-instance-folder
+```
+
 ## 📁 Folder Structure
 
 ```
