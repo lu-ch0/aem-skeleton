@@ -2,12 +2,35 @@
 
 This repository provides a ready-to-use skeleton for setting up local AEM environments. It includes scripts to configure and run AEM Author and Publish instances in a clean and isolated directory structure.
 
+## 🛠️ Cloning the Repo by OS and Minimal Download
+
+This repository supports Linux/macOS and Windows scripts in separate branches to avoid downloading unnecessary files.
+
+- **Linux/macOS users:** Clone the `main` branch which contains shell scripts and README with right instructions.
+- **Windows users:** Clone the `windows` branch which contains batch scripts (experimental) and README with how to use.
+
+To minimize download size, perform a shallow clone with only the latest commit:
+
+### Linux/macOS
+
+```bash
+git clone --branch main --depth 1 https://github.com/lu-ch0/aem-skeleton.git your-instance-folder
+cd your-instance-folder
+```
+
+### Windows (Git Bash)
+
+```bash
+git clone --branch windows --depth 1 https://github.com/lu-ch0/aem-skeleton.git your-instance-folder
+cd your-instance-folder
+```
+
 ## 📁 Folder Structure
 
 ```
 .
-├── init.sh               # Initializes the folder structure and copies the AEM JAR
-├── run.sh                # Script to start/stop Author and/or Publish instances
+├── init.bat              # Initializes the folder structure and copies the AEM JAR
+├── run.bat               # Script to start/stop Author and/or Publish instances
 ├── author/               # Contains the Author jar
 ├── publish/              # Contains the Publish jar
 ├── logs/                 # Stores runtime logs and PIDs
@@ -18,12 +41,18 @@ This repository provides a ready-to-use skeleton for setting up local AEM enviro
 
 ## ⚙️ Initial Setup
 
-1. Download the AEM Quickstart jar from Adobe.
-2. Run the `init.sh` script with the path to the downloaded jar:
+### Windows (Experimental)
 
-```bash
-./init.sh ~/Downloads/aem-sdk-2025.03.12345-quickstart.jar
+1. Download the AEM Quickstart jar from Adobe.
+2. Run the `init.bat` script by double-clicking it or from the command line:
+
 ```
+init.bat
+```
+
+3. The script will prompt you to enter the full path to the downloaded JAR.
+
+> ⚠️ **Note:** The Windows scripts are experimental and might have limitations compared to the Linux/macOS versions.
 
 This will:
 - Create required folders
@@ -35,23 +64,12 @@ This will:
 
 ## 🚀 Usage
 
-### Start AEM
+### Windows (Experimental)
 
-```bash
-./run.sh start            # Starts only Author
-./run.sh start author     # Starts only Author
-./run.sh start publish    # Starts only Publish
-./run.sh start both       # Starts both instances
-```
+Double-click `run.bat` to launch a menu-driven interface to start/stop Author, Publish, or both.
 
-### Stop AEM
+> ⚠️ **Note:** The Windows scripts are experimental and might not support all features (e.g., `status` command may be limited).
 
-```bash
-./aem.sh stop           # Stop only Author
-./aem.sh stop author
-./aem.sh stop publish
-./aem.sh stop both
-```
 
 Logs and PID files are saved under the `logs/` directory.
 
